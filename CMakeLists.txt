@@ -121,7 +121,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-
+add_library(PIGPIO /home/ubuntu/PIGPIO)
 FIND_LIBRARY(PIGPIO_LIBRARIES PIGPIO /home/ubuntu/PIGPIO)
 
 
