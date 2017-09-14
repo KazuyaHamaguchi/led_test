@@ -3,10 +3,11 @@
 
 int main(int argc, char **argv)
 {
+        ros::init(argc, argv, "led_test_node");
+	ros::NodeHandle nh;
 	int pi = pigpio_start(0, 0);
-	ros::init(argc, argv, "led_test_node");
 	set_mode(pi, 22, PI_OUTPUT);
-	while(1)
+	while(ros::ok())
 	{
 		gpio_write(pi, 22, 1);
 		ROS_INFO("LED ON");
