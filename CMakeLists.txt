@@ -121,9 +121,8 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_library(PIGPIO /home/ubuntu/PIGPIO)
-FIND_LIBRARY(PIGPIO_LIBRARIES PIGPIO /home/ubuntu/PIGPIO)
-
+# Find PIGPIO http://abyz.co.uk/rpi/pigpio/
+find_library(PIGPIO_LIBRARIES NAMES pigpio)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -153,8 +152,7 @@ FIND_LIBRARY(PIGPIO_LIBRARIES PIGPIO /home/ubuntu/PIGPIO)
 ## Specify libraries to link a library or executable target against
  target_link_libraries(${PROJECT_NAME}_node
    ${catkin_LIBRARIES}
-   # ${PIGPIO_LIBRARIES}
-   PIGPIO
+   ${PIGPIO_LIBRARIES}
  )
 #############
 ## Install ##
