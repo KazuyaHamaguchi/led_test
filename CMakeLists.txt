@@ -122,7 +122,7 @@ include_directories(
 )
 
 # Find PIGPIO http://abyz.co.uk/rpi/pigpio/
-find_library(PIGPIO_LIBRARIES NAMES pigpio)
+find_library(LIBPIGPIOD_IF2_LIBRARIES NAMES pigpiod_if2)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -150,10 +150,10 @@ find_library(PIGPIO_LIBRARIES NAMES pigpio)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(${PROJECT_NAME}_node
-   ${catkin_LIBRARIES}
-   ${PIGPIO_LIBRARIES}
- )
+target_link_libraries(${PROJECT_NAME}_node
+  ${catkin_LIBRARIES}
+  ${LIBPIGPIOD_IF2_LIBRARIES}
+)
 #############
 ## Install ##
 #############
